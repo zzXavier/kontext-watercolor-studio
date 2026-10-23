@@ -1,0 +1,12 @@
+# Install together with the pinned ComfyUI requirements.txt.
+gguf==0.17.1
+transformers==4.55.4
+tokenizers==0.21.4
+sentencepiece==0.2.2
+protobuf==5.29.5
+safetensors==0.8.0
+numpy==2.3.3
+Pillow==11.3.0
+torchsde==0.2.6
+kornia==0.8.1
+spandrel==0.4.1

@@ -1,0 +1,34 @@
+[
+  {
+    "repo": "QuantStack/FLUX.1-Kontext-dev-GGUF",
+    "revision": "2d083027732f81e5548620b57ac47da22d30aa5a",
+    "source": "flux1-kontext-dev-Q4_K_S.gguf",
+    "path": "diffusion_models/flux1-kontext-dev-Q4_K_S.gguf",
+    "size": 6797337888,
+    "sha256": "cc22ff7a2debb02e63765fa53af8c5ae0b6883b462d0601b9b55f51a15cdd6da"
+  },
+  {
+    "repo": "city96/t5-v1_1-xxl-encoder-gguf",
+    "revision": "005a6ea51a7d0b84d677b3e633bb52a8c85a83d9",
+    "source": "t5-v1_1-xxl-encoder-Q4_K_M.gguf",
+    "path": "text_encoders/t5-v1_1-xxl-encoder-Q4_K_M.gguf",
+    "size": 2896123072,
+    "sha256": "6be2b0b7e2de7cf2919340c88cb802a103a997ce46c53131cec91958c1db1af4"
+  },
+  {
+    "repo": "comfyanonymous/flux_text_encoders",
+    "revision": "6af2a98e3f615bdfa612fbd85da93d1ed5f69ef5",
+    "source": "clip_l.safetensors",
+    "path": "text_encoders/clip_l.safetensors",
+    "size": 246144152,
+    "sha256": "660c6f5b1abae9dc498ac2d21e1347d2abdb0cf6c0c0c8576cd796491d9a6cdd"
+  },
+  {
+    "repo": "Comfy-Org/Lumina-Image-2",
+    "revision": "5b072540ef86570fecb8249c505f23d5bdeb88cd",
+    "source": "split_files/vae/ae.safetensors",
+    "path": "vae/ae.safetensors",
+    "size": 335304388,
+    "sha256": "afc8e28272cd15db3919bacdb6918ce9c1ed22e96cb12c4d5ed0fba823529e38"
+  }
+]
