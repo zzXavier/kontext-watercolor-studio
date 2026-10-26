@@ -1,0 +1,5 @@
+case,source,seed,steps,width,height,end_to_end_seconds,cached_node_count,output_sha256
+astronaut-transparent-wash,astronaut.png,42,20,720,720,142.031,0,935d48c7520a89d10011a44fe6b2265437dc339972d76e402af5314c53b0dfcc
+astronaut-ink-and-wash,astronaut.png,42,20,720,720,120.125,6,a5063befad9f683dfbbaaaf3dcfd39220694f5696b23fce663c9d9719ef57325
+rocket-transparent-wash,rocket.jpg,42,20,880,584,120.734,3,8cbe28dca25024203166d046faf5065459fe024927d98fc2b77aab7398c11e22
+rocket-ink-and-wash,rocket.jpg,42,20,880,584,120.031,6,6b49cd1a8c85969e0316245c3cc4233da3ced0c08f1fe7d9b0e2aee3cb2c20f1

@@ -1,0 +1,30 @@
+{
+  "source_file": "rocket.jpg",
+  "source_file_sha256": "c2dd0de7c538df8d111e479619b129464d0269d0ae5fd18ca91d33a7fdfea95c",
+  "uploaded_png_sha256": "bff8e5689368fe318bd12f4c38fff5c07ac55ecbcf7099f73b95653c2a5b441f",
+  "output_png_sha256": "6b49cd1a8c85969e0316245c3cc4233da3ced0c08f1fe7d9b0e2aee3cb2c20f1",
+  "source_size": [
+    640,
+    427
+  ],
+  "output_size": [
+    880,
+    584
+  ],
+  "seed": 42,
+  "steps": 20,
+  "megapixels": 0.5,
+  "guidance": 2.5,
+  "instruction": "Render this photograph as a plein-air ink-and-watercolor sketch on textured off-white watercolor paper. Keep the original subject identity, framing, gesture and spatial relationships. Describe the main edges with sparse fine sepia pen marks. Paint the large shapes in loose transparent, granulating watercolor washes, reserving the white paper for highlights. Preserve the main color relationships. No added writing, signature or frame.",
+  "graph_sha256": "ebe8ec8a73818f60812a990822c6e6a544d89b4a6f420647b06c3c087136443e",
+  "prompt_id": "dfef21c1-812d-4f77-811b-0b46b12e6977",
+  "elapsed_seconds": 120.031,
+  "cached_nodes": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "10"
+  ]
+}

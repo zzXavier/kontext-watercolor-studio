@@ -1,0 +1,183 @@
+{
+  "1": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "kontext-watercolor-bff8e5689368fe318bd12f4c.png"
+    },
+    "_meta": {
+      "title": "Source photograph"
+    }
+  },
+  "2": {
+    "class_type": "ImageScaleToTotalPixels",
+    "inputs": {
+      "image": [
+        "1",
+        0
+      ],
+      "upscale_method": "lanczos",
+      "megapixels": 0.5
+    },
+    "_meta": {
+      "title": "Reference resolution"
+    }
+  },
+  "3": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "ae.safetensors"
+    },
+    "_meta": {
+      "title": "FLUX autoencoder"
+    }
+  },
+  "4": {
+    "class_type": "VAEEncode",
+    "inputs": {
+      "pixels": [
+        "2",
+        0
+      ],
+      "vae": [
+        "3",
+        0
+      ]
+    },
+    "_meta": {
+      "title": "Encode the photograph"
+    }
+  },
+  "5": {
+    "class_type": "DualCLIPLoaderGGUF",
+    "inputs": {
+      "clip_name1": "clip_l.safetensors",
+      "clip_name2": "t5-v1_1-xxl-encoder-Q4_K_M.gguf",
+      "type": "flux"
+    },
+    "_meta": {
+      "title": "T5 + CLIP-L"
+    }
+  },
+  "6": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "clip": [
+        "5",
+        0
+      ],
+      "text": "Render this photograph as a plein-air ink-and-watercolor sketch on textured off-white watercolor paper. Keep the original subject identity, framing, gesture and spatial relationships. Describe the main edges with sparse fine sepia pen marks. Paint the large shapes in loose transparent, granulating watercolor washes, reserving the white paper for highlights. Preserve the main color relationships. No added writing, signature or frame."
+    },
+    "_meta": {
+      "title": "Watercolor instruction"
+    }
+  },
+  "7": {
+    "class_type": "ReferenceLatent",
+    "inputs": {
+      "conditioning": [
+        "6",
+        0
+      ],
+      "latent": [
+        "4",
+        0
+      ]
+    },
+    "_meta": {
+      "title": "Condition on source content"
+    }
+  },
+  "8": {
+    "class_type": "FluxGuidance",
+    "inputs": {
+      "conditioning": [
+        "7",
+        0
+      ],
+      "guidance": 2.5
+    },
+    "_meta": {
+      "title": "Edit guidance"
+    }
+  },
+  "9": {
+    "class_type": "ConditioningZeroOut",
+    "inputs": {
+      "conditioning": [
+        "6",
+        0
+      ]
+    },
+    "_meta": {
+      "title": "Neutral negative condition"
+    }
+  },
+  "10": {
+    "class_type": "UnetLoaderGGUF",
+    "inputs": {
+      "unet_name": "flux1-kontext-dev-Q4_K_S.gguf"
+    },
+    "_meta": {
+      "title": "FLUX.1 Kontext [dev] GGUF"
+    }
+  },
+  "11": {
+    "class_type": "KSampler",
+    "inputs": {
+      "model": [
+        "10",
+        0
+      ],
+      "positive": [
+        "8",
+        0
+      ],
+      "negative": [
+        "9",
+        0
+      ],
+      "latent_image": [
+        "4",
+        0
+      ],
+      "seed": 42,
+      "steps": 20,
+      "cfg": 1,
+      "sampler_name": "euler",
+      "scheduler": "simple",
+      "denoise": 1
+    },
+    "_meta": {
+      "title": "Reference-guided sampling"
+    }
+  },
+  "12": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": [
+        "11",
+        0
+      ],
+      "vae": [
+        "3",
+        0
+      ]
+    },
+    "_meta": {
+      "title": "Decode watercolor"
+    }
+  },
+  "13": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "12",
+        0
+      ],
+      "filename_prefix": "KontextWatercolor"
+    },
+    "_meta": {
+      "title": "Save painting"
+    }
+  }
+}

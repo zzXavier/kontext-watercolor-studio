@@ -1,0 +1,30 @@
+{
+  "source_file": "astronaut.png",
+  "source_file_sha256": "88431cd9653ccd539741b555fb0a46b61558b301d4110412b5bc28b5e3ea6cb5",
+  "uploaded_png_sha256": "2d649543bf101d25be5bdd2aa6ef1d813670388bd92f8ebbd12de0cdef546355",
+  "output_png_sha256": "a5063befad9f683dfbbaaaf3dcfd39220694f5696b23fce663c9d9719ef57325",
+  "source_size": [
+    512,
+    512
+  ],
+  "output_size": [
+    720,
+    720
+  ],
+  "seed": 42,
+  "steps": 20,
+  "megapixels": 0.5,
+  "guidance": 2.5,
+  "instruction": "Render this photograph as a plein-air ink-and-watercolor sketch on textured off-white watercolor paper. Keep the original subject identity, framing, gesture and spatial relationships. Describe the main edges with sparse fine sepia pen marks. Paint the large shapes in loose transparent, granulating watercolor washes, reserving the white paper for highlights. Preserve the main color relationships. No added writing, signature or frame.",
+  "graph_sha256": "e98433c463189be2f687a7e1f6f500167d0dda25c860fe2566a43e922922ff8f",
+  "prompt_id": "55e9fa7d-9238-470c-9ccc-02c1d13db571",
+  "elapsed_seconds": 120.125,
+  "cached_nodes": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "10"
+  ]
+}

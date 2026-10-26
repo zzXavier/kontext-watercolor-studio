@@ -1,5 +1,6 @@
 """Render photographs or rebuild the source/output contact sheet."""
 import argparse
+import csv
 import hashlib
 import json
 import os
@@ -16,6 +17,7 @@ def rebuild(folder):
     if manifest["status"] != "completed" or not manifest["cases"] or len(set(manifest["cases"])) != len(manifest["cases"]):
         raise ValueError("A complete run with distinct cases is required")
     groups = {}
+    rows = []
     for case in manifest["cases"]:
         if Path(case).name!=case or case in (".",".."):
             raise ValueError("Invalid case identifier")
@@ -30,6 +32,11 @@ def rebuild(folder):
         for filename,digest in [("source.png","uploaded_png_sha256"),("watercolor.png","output_png_sha256")]:
             if sha256((dest/filename).read_bytes())!=receipt[digest]:
                 raise ValueError(f"Image checksum mismatch for {case}/{filename}")
+        for filename,field in [("source.png","source_size"),("watercolor.png","output_size")]:
+            with Image.open(dest/filename) as photo:
+                if list(photo.size)!=receipt[field]:raise ValueError(f"Recorded dimensions differ for {case}/{filename}")
+        rows.append([case,receipt["source_file"],receipt["seed"],receipt["steps"],*receipt["output_size"],
+            receipt["elapsed_seconds"],len(receipt["cached_nodes"]),receipt["output_png_sha256"]])
         if manifest.get("action") in ("demo","reproduce"):
             name=receipt["source_file"]
             if name not in SETTINGS["photos"] or sha256((ROOT/"examples"/name).read_bytes())!=receipt["source_file_sha256"]:
@@ -47,6 +54,8 @@ def rebuild(folder):
                 board.paste(tile,(x*width+(width-tile.width)//2,y*height+24+(height-32-tile.height)//2))
             draw.text((x*width+8,y*height+5),label,fill="#26323a")
     board.save(folder/"comparison.jpg",quality=92,subsampling=0)
+    with (folder/"summary.csv").open("w",encoding="utf-8",newline="") as f:
+        writer=csv.writer(f);writer.writerow(["case","source","seed","steps","width","height","end_to_end_seconds","cached_node_count","output_sha256"]);writer.writerows(rows)
     print(folder/"comparison.jpg")
 
 

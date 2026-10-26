@@ -1,0 +1,30 @@
+{
+  "status": "completed",
+  "action": "reproduce",
+  "cases": [
+    "astronaut-transparent-wash",
+    "astronaut-ink-and-wash",
+    "rocket-transparent-wash",
+    "rocket-ink-and-wash"
+  ],
+  "environment": {
+    "server": {
+      "comfyui_version": "0.3.50",
+      "python_version": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+      "pytorch_version": "2.4.1+cu121"
+    },
+    "devices": [
+      {
+        "name": "cuda:0 NVIDIA GeForce RTX 4060 Laptop GPU : cudaMallocAsync",
+        "type": "cuda",
+        "vram_total": 8585216000
+      }
+    ],
+    "models": {
+      "unet_name": "flux1-kontext-dev-Q4_K_S.gguf",
+      "clip_name1": "clip_l.safetensors",
+      "clip_name2": "t5-v1_1-xxl-encoder-Q4_K_M.gguf",
+      "vae_name": "ae.safetensors"
+    }
+  }
+}

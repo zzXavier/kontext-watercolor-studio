@@ -1,0 +1,23 @@
+{
+  "source_file": "astronaut.png",
+  "source_file_sha256": "88431cd9653ccd539741b555fb0a46b61558b301d4110412b5bc28b5e3ea6cb5",
+  "uploaded_png_sha256": "2d649543bf101d25be5bdd2aa6ef1d813670388bd92f8ebbd12de0cdef546355",
+  "output_png_sha256": "935d48c7520a89d10011a44fe6b2265437dc339972d76e402af5314c53b0dfcc",
+  "source_size": [
+    512,
+    512
+  ],
+  "output_size": [
+    720,
+    720
+  ],
+  "seed": 42,
+  "steps": 20,
+  "megapixels": 0.5,
+  "guidance": 2.5,
+  "instruction": "Turn this photo into a watercolor painting with translucent washes of pigment, soft color transitions and subtle paper grain. Keep the original framing, subject, pose and object positions. Paint each contour once and avoid doubled outlines.",
+  "graph_sha256": "75fed03d42faabe25e4e6e97d277412fc593bf884f2b4b960ba280d9735b5c79",
+  "prompt_id": "0c16f67a-a6d9-4459-b994-55ec53cdc005",
+  "elapsed_seconds": 142.031,
+  "cached_nodes": []
+}
