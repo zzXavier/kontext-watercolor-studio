@@ -1,0 +1,14 @@
+{
+  "presets": {
+    "transparent-wash": "Turn this photo into a watercolor painting with translucent washes of pigment, soft color transitions and subtle paper grain. Keep the original framing, subject, pose and object positions. Paint each contour once and avoid doubled outlines.",
+    "ink-and-wash": "Render this photograph as a plein-air ink-and-watercolor sketch on textured off-white watercolor paper. Keep the original subject identity, framing, gesture and spatial relationships. Describe the main edges with sparse fine sepia pen marks. Paint the large shapes in loose transparent, granulating watercolor washes, reserving the white paper for highlights. Preserve the main color relationships. No added writing, signature or frame."
+  },
+  "seed": 42,
+  "steps": 20,
+  "megapixels": 0.5,
+  "guidance": 2.5,
+  "photos": [
+    "astronaut.png",
+    "rocket.jpg"
+  ]
+}

@@ -1,0 +1,5 @@
+# Preserve raw hashes for the archived input workflow and the submitted ComfyUI graphs.
+workflows/original-fp8.json -text
+results/**/workflow.json -text
+*.png -text
+*.jpg -text
