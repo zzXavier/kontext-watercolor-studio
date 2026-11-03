@@ -19,7 +19,7 @@ class SavedRun(unittest.TestCase):
             (case/"source.png").write_bytes(png);(case/"watercolor.png").write_bytes(png)
             graph=graph_for("kontext-watercolor-"+sig[:24]+".png","Paint a watercolor",42,20,.5)
             data=json.dumps(graph).encode();(case/"workflow.json").write_bytes(data)
-            rec={"source_file":"fixture.png","instruction":"Paint a watercolor","seed":42,"steps":20,"megapixels":.5,
+            rec={"source_file":"fixture.png","source_size":[4,4],"output_size":[4,4],"elapsed_seconds":0.0,"cached_nodes":[],"instruction":"Paint a watercolor","seed":42,"steps":20,"megapixels":.5,
                  "graph_sha256":sha256(data),"uploaded_png_sha256":sig,"output_png_sha256":sig}
             (case/"run.json").write_text(json.dumps(rec))
             (root/"manifest.json").write_text(json.dumps({"status":"completed","cases":["fixture"]}))

@@ -1,0 +1,27 @@
+{
+  "source_file": "rocket.jpg",
+  "source_file_sha256": "c2dd0de7c538df8d111e479619b129464d0269d0ae5fd18ca91d33a7fdfea95c",
+  "uploaded_png_sha256": "bff8e5689368fe318bd12f4c38fff5c07ac55ecbcf7099f73b95653c2a5b441f",
+  "output_png_sha256": "8cbe28dca25024203166d046faf5065459fe024927d98fc2b77aab7398c11e22",
+  "source_size": [
+    640,
+    427
+  ],
+  "output_size": [
+    880,
+    584
+  ],
+  "seed": 42,
+  "steps": 20,
+  "megapixels": 0.5,
+  "guidance": 2.5,
+  "instruction": "Turn this photo into a watercolor painting with translucent washes of pigment, soft color transitions and subtle paper grain. Keep the original framing, subject, pose and object positions. Paint each contour once and avoid doubled outlines.",
+  "graph_sha256": "cc68a2d5ac81ab366ebffdb8d9372b999ffcfa346138b8ecdacf413a7bde79ba",
+  "prompt_id": "d82a9660-ac27-4fdc-bf50-e9dc7f0e2dbe",
+  "elapsed_seconds": 120.734,
+  "cached_nodes": [
+    "3",
+    "5",
+    "10"
+  ]
+}

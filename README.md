@@ -2,6 +2,14 @@
 
 Turn a photograph into a watercolor painting in ComfyUI while keeping the subject and composition. The studio includes the original single-photo workflow, a quantized workflow for an 8 GB GPU, and a local client for uploading photographs, rendering them and rebuilding comparison sheets.
 
+![Source photographs beside their transparent-wash and ink-and-wash renders](results/comparison.jpg)
+
+## What the two instructions changed
+
+The transparent wash retained the astronaut's orange suit, helmet, flag and shuttle model. The ink-and-wash instruction kept the portrait but replaced the flag and shuttle with blank paper. In the launch-pad scene the transparent wash retained the four towers and lights, while the ink sketch retained only the inner pair of towers. Both treatments brightened the night sky. These are observable changes in two photographs. Source conditioning does not guarantee preservation of every object, inscription or lighting condition.
+
+The four genuine renders ran on an NVIDIA GeForce RTX 4060 Laptop GPU with 8 GB VRAM. All used seed 42, 20 Euler/simple steps, guidance 2.5 and a 0.5-megapixel reference canvas. The astronaut outputs are 720 × 720 and the rocket outputs are 880 × 584. End-to-end request times ranged from 120.0 to 142.0 seconds, including local server queueing, image transfer and first-use loads where applicable. Model or preprocessing nodes could be reused after the first request; the sampler ran in each case. [Per-image timings and hashes](results/summary.csv) · [Run manifest](results/manifest.json)
+
 ## Start with the original workflow
 
 Drag [the original FP8 workflow](workflows/original-fp8.json) onto a ComfyUI canvas with FLUX.1 Kontext [dev] support. Upload a photo in the image node. The original practice uses 13 built-in nodes, seed 42, 20 Euler steps and guidance 2.5. The author previously confirmed running this exercise. Its original source photo and generated PNG were not preserved. [Original-workflow model setup](https://docs.comfy.org/tutorials/flux/flux-1-kontext-dev)
@@ -14,7 +22,7 @@ Use Python 3.11, Git and a CUDA-enabled PyTorch environment. Run these from the 
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 python -m pip install torch==2.4.1 torchvision==0.19.1 torchaudio==2.4.1 --index-url https://download.pytorch.org/whl/cu121
-git clone https://github.com/Comfy-Org/ComfyUI.git ../ComfyUI-Kontext
+git clone --depth 1 --branch v0.3.50 https://github.com/Comfy-Org/ComfyUI.git ../ComfyUI-Kontext
 git -C ../ComfyUI-Kontext checkout --detach d5c1954d5cd4a789bbf84d2b75a955a5a3f93de8
 git clone https://github.com/city96/ComfyUI-GGUF.git ../ComfyUI-Kontext/custom_nodes/ComfyUI-GGUF
 git -C ../ComfyUI-Kontext/custom_nodes/ComfyUI-GGUF checkout --detach cf0573351ac260d629d460d97f09b09ac17d3726
